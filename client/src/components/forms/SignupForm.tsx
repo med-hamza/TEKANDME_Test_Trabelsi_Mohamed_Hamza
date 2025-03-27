@@ -17,7 +17,7 @@ const INITIAL_STATE = {
 const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [formState, formAction] = useFormState(registerUserAction, INITIAL_STATE);
-    console.log(formState)
+
     return (
         <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -169,7 +169,7 @@ const SignupForm = () => {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-skin-accent focus:outline-none focus:ring-2 focus:ring-offset-2"
                             >
                                 Sign Up
                             </button>

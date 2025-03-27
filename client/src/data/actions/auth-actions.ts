@@ -64,8 +64,8 @@ export async function registerUserAction(prevState: any, formData: FormData) {
         };
     }
 
-    cookies().set("jwt", responseData.jwt, config);
-    redirect("/dashboard");
+
+    redirect("/signin");
 }
 
 const schemaLogin = z.object({

@@ -10,9 +10,10 @@ import { Task } from "@/types/task";
 import { fetchTasks } from "@/data/services/fetchTask";
 import TaskList from "./TaskList";
 import { getFormattedDateParts } from "@/utils/getDueDateStatus";
-
+import { useTasks } from "@/hooks/useTasks";
 
 export default function TaskForm() {
+    const { reload } = useTasks();
     const [token, setToken] = useState<string>("");
     const [formData, setFormData] = useState({
         title: "",
@@ -48,7 +49,7 @@ export default function TaskForm() {
                 dueDate: new Date(),
                 startDate: new Date(),
             });
-            alert("Task created successfully!");
+
         } catch (err) {
             setError(err instanceof Error ? err.message : "Failed to create task");
         } finally {
@@ -154,22 +155,22 @@ export default function TaskForm() {
                     <TaskList />
                 </div>
             </div>
-            <div className="mt-6 flex mb-20  justify-center w-4/5 mx-auto gap-6">
-                <div className="bg-skin-filter rounded-3xl p-6 text-center w-2/6  shadow">
+            <div className="mt-6 flex lg:flex-row flex-col mb-20  justify-center w-full lg:w-4/5 mx-auto gap-6">
+                <div className="bg-skin-filter rounded-3xl p-6 text-center  w-full lg:w-2/6  shadow">
                     <p className="text-xl font-semibold text-[#3A3A36]">COMPLETED TASKS</p>
                     <p className="text-4xl font-extrabold text-[#3A3A36] mt-2">
                         {String(taskCountByStatus.completed).padStart(2, "0")}
                     </p>
                 </div>
 
-                <div className="bg-[#B38D8D] rounded-3xl p-6 text-center w-2/6  shadow">
+                <div className="bg-[#B38D8D] rounded-3xl p-6 text-center w-full lg:w-2/6  shadow">
                     <p className="text-xl font-bold text-white">PENDING TASKS</p>
                     <p className="text-4xl font-extrabold text-white mt-2">
                         {String(taskCountByStatus.pending).padStart(2, "0")}
                     </p>
                 </div>
 
-                <div className="bg-white rounded-3xl p-6 shadow-lg w-7/12 items-center gap-10  flex justify-center text-center">
+                <div className="bg-white rounded-3xl p-6 shadow-lg w-full lg:w-7/12 items-center gap-10  flex justify-center text-center">
                     <p className="text-sky-700 text-xl font-semibold tracking-wide">TASKS CREATED</p>
                     <p className="text-6xl font-extrabold text-black ">
                         {taskCountByStatus.total.toLocaleString()}

@@ -124,7 +124,8 @@ export default function TaskList() {
                     <div>
                         <label className="block text-sm font-medium">Description</label>
                         <textarea
-                            className="w-full p-2 border rounded"
+
+                            className="w-full p-2 border rounded min-h-[150px]"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         />
