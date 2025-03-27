@@ -20,9 +20,12 @@ export default function TaskCard({ task, onEdit, onDelete, onToggleStatus }: Pro
         <div className={`relative grid grid-cols-[1fr_auto] gap-4 p-4 rounded-2xl shadow-sm ${getTaskBgColor(task.statusTask, task.dueDate)}`}>
             <div className="space-y-1 pr-8">
                 <h3 className="font-bold text-2xl text-[#3A3A36]">{task.title}</h3>
-                <p className="text-sm text-[#5C5C57]">
-                    {task.description?.[0]?.children?.[0]?.text ?? ""}
-                </p>
+
+                <div className="max-w-[200px] lg:max-w-[260px]">
+                    <p className="text-sm text-[#5C5C57] truncate">
+                        {task.description?.[0]?.children?.[0]?.text ?? ""}
+                    </p>
+                </div>
 
                 <div className="space-y-1 text-xl pt-3 font-bold  text-skin-text">
                     <p>
