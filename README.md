@@ -29,3 +29,5 @@ Navigate to Settings → Roles → Authenticated.
 Scroll to Task 
      Enable:
     find ,findOne, create, update, delete
+
+# Register before Login     
