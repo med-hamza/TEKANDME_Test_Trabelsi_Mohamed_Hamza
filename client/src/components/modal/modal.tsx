@@ -25,14 +25,14 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
                 <div className="header-modal flex flex-row justify-between items-center mb-4">
                     <div></div>
                     <div className="">
-                        <p className="text-white font-bold text-2xl">
-                            Title
+                        <p className="text-black font-bold text-2xl">
+                            Edit Task
                         </p>
 
                     </div>
                     <button onClick={onClose}>
                         <svg width="31" height="31" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.9062 15.9062L25.0938 25.0938M25.0938 15.9062L15.9062 25.0938M38.875 20.5C38.875 30.6482 30.6482 38.875 20.5 38.875C10.3518 38.875 2.125 30.6482 2.125 20.5C2.125 10.3518 10.3518 2.125 20.5 2.125C30.6482 2.125 38.875 10.3518 38.875 20.5Z" stroke="white" strokeWidth="3.0625" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M15.9062 15.9062L25.0938 25.0938M25.0938 15.9062L15.9062 25.0938M38.875 20.5C38.875 30.6482 30.6482 38.875 20.5 38.875C10.3518 38.875 2.125 30.6482 2.125 20.5C2.125 10.3518 10.3518 2.125 20.5 2.125C30.6482 2.125 38.875 10.3518 38.875 20.5Z" stroke="black" strokeWidth="3.0625" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
 
                     </button>

@@ -69,6 +69,17 @@ export default function TaskForm() {
 
     const modifiers = Object.keys(taskCountByDate).map(dateStr => new Date(dateStr));
 
+
+    const taskCountByStatus = tasks.reduce(
+        (acc, task) => {
+            if (task.statusTask === "completed") acc.completed++;
+            else acc.pending++;
+            acc.total++;
+            return acc;
+        },
+        { completed: 0, pending: 0, total: 0 }
+    );
+
     return (
         <section className="mx-auto p-4">
             {error && <div className="mb-4 p-2 bg-red-100 text-red-700 rounded">{error}</div>}
@@ -141,6 +152,28 @@ export default function TaskForm() {
                 </div>
                 <div className="flex-1">
                     <TaskList />
+                </div>
+            </div>
+            <div className="mt-6 flex mb-20  justify-center w-4/5 mx-auto gap-6">
+                <div className="bg-skin-filter rounded-3xl p-6 text-center w-2/6  shadow">
+                    <p className="text-xl font-semibold text-[#3A3A36]">COMPLETED TASKS</p>
+                    <p className="text-4xl font-extrabold text-[#3A3A36] mt-2">
+                        {String(taskCountByStatus.completed).padStart(2, "0")}
+                    </p>
+                </div>
+
+                <div className="bg-[#B38D8D] rounded-3xl p-6 text-center w-2/6  shadow">
+                    <p className="text-xl font-bold text-white">PENDING TASKS</p>
+                    <p className="text-4xl font-extrabold text-white mt-2">
+                        {String(taskCountByStatus.pending).padStart(2, "0")}
+                    </p>
+                </div>
+
+                <div className="bg-white rounded-3xl p-6 shadow-lg w-7/12 items-center gap-10  flex justify-center text-center">
+                    <p className="text-sky-700 text-xl font-semibold tracking-wide">TASKS CREATED</p>
+                    <p className="text-6xl font-extrabold text-black ">
+                        {taskCountByStatus.total.toLocaleString()}
+                    </p>
                 </div>
             </div>
         </section>
