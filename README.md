@@ -1,3 +1,6 @@
+
+
+# 1 Create .env file in the server root directory
 # Server
 HOST=0.0.0.0
 PORT=1337
@@ -18,3 +21,11 @@ DATABASE_PASSWORD=
 DATABASE_SSL=false
 DATABASE_FILENAME=./data/strapi.db
 JWT_SECRET=wDd1LesM30bCkNH0PkdDUQ==
+
+# 2 Enable Permissions in Strapi
+
+Navigate to Settings → Roles → Authenticated.
+
+Scroll to Task 
+     Enable:
+    find ,findOne, create, update, delete
