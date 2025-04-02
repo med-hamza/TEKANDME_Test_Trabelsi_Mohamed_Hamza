@@ -22,12 +22,8 @@ DATABASE_SSL=false
 DATABASE_FILENAME=./data/strapi.db
 JWT_SECRET=wDd1LesM30bCkNH0PkdDUQ==
 
-# 2 Enable Permissions in Strapi
+# 2 Login in Strapi 
+mohamedhamzatrabelsi@gmail.com
+Strapi123
 
-Navigate to Settings → Roles → Authenticated.
-
-Scroll to Task 
-     Enable:
-    find ,findOne, create, update, delete
-
-# 3 Register before Login     
+# Front-end : 3 Register before Login     
